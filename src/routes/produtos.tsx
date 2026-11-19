@@ -25,7 +25,7 @@ function Produtos() {
         <Search /><input value={q} onChange={(e) => setQ(e.target.value)} placeholder="PESQUISAR PRODUTO" className="flex-1 bg-transparent font-serif-b outline-none placeholder:text-card-light-foreground/60" />
       </label>
       <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
-        {list.map((p) => { const I = icons[p.icon]; return (
+        {list.map((p) => { const I = icons[p.icon] ?? Tv; return (
           <div key={p.id} className="flex flex-col items-center text-center">
             <div className="flex aspect-square w-full items-center justify-center rounded-md bg-card-light text-card-light-foreground shadow-glow"><I size={72} /></div>
             <h3 className="mt-3 text-sm font-semibold">{p.name}</h3>

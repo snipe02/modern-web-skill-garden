@@ -15,7 +15,7 @@ function Index() {
   return (
     <Shell>
       <div className="mx-auto flex max-w-md flex-col gap-4">
-        {[["/", "INÍCIO"], ["/produtos", "PRODUTO"], ["/contato", "CONTATO"]].map(([to, l]) => (
+        {([["/", "INÍCIO"], ["/produtos", "PRODUTO"], ["/contato", "CONTATO"]] as const).map(([to, l]) => (
           <Link key={to} to={to} className="pill"><Send className="text-primary" /> <span className="flex-1 text-center">{l}</span></Link>
         ))}
       </div>

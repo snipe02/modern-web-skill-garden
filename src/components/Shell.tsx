@@ -21,7 +21,7 @@ export function Shell({ children }: { children: ReactNode }) {
         </div>
         {open && (
           <nav className="absolute left-6 top-20 z-10 flex flex-col gap-2 rounded-lg border bg-card p-4 font-serif-b">
-            {[["/", "Início"], ["/produtos", "Produtos"], ["/contato", "Contato"]].map(([to, l]) => (
+            {([["/", "Início"], ["/produtos", "Produtos"], ["/contato", "Contato"]] as const).map(([to, l]) => (
               <Link key={to} to={to} onClick={() => setOpen(false)} className="hover:text-primary">{l}</Link>
             ))}
           </nav>
