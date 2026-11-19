@@ -26,15 +26,15 @@ function Produtos() {
       </label>
       <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
         {list.map((p) => { const I = icons[p.icon] ?? Tv; return (
-          <div key={p.id} className="flex flex-col items-center text-center">
+          <div key={p.id} className="flex flex-col items-center text-center h-full">
             <div className="flex aspect-square w-full items-center justify-center rounded-md bg-card-light text-card-light-foreground shadow-glow"><I size={72} /></div>
             <h3 className="mt-3 text-sm font-semibold">{p.name}</h3>
             <p className="font-bold text-primary">{brl(p.price)} à vista</p>
             <p className="text-xs text-muted-foreground">em até {p.installments}</p>
-            <button aria-label={`Adicionar ${p.name}`} onClick={() => { addToCart(p.id); toast.success("Adicionado ao carrinho"); }} className="mt-4 rounded-full bg-card-light p-3 text-card-light-foreground transition hover:scale-110"><Plus size={28} /></button>
+            <button aria-label={`Adicionar ${p.name}`} onClick={() => { addToCart(p.id); toast.success("Adicionado ao carrinho"); }} className="mt-auto pt-0 mt-4 self-center rounded-full bg-card-light p-3 text-card-light-foreground transition hover:scale-110"><Plus size={28} /></button>
           </div>); })}
       </div>
-      {cart.length > 0 && <p className="mt-10 text-center font-serif-b">Carrinho: {cart.length} itens — {brl(total)}</p>}
+      {cart.length > 0 && <p className="mt-10 text-center font-serif-b">Carrinho: {cart.length} {cart.length === 1 ? "item" : "itens"} — {brl(total)}</p>}
     </Shell>
   );
 }
