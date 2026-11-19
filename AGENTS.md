@@ -28,3 +28,5 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Keep cart contents in the shared cart store and render them at `/carrinho`; the header cart link must open that route so selections survive in-app navigation.

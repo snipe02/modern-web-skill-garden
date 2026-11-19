@@ -7,6 +7,8 @@ export const Route = createFileRoute("/")({
     { name: "description", content: "Loja on-line de eletrônicos: som, smartphones, notebooks e TVs com frete grátis." },
     { property: "og:title", content: "Plataforma — Materiais Tecnológicos" },
     { property: "og:description", content: "Eletrônicos com ofertas e frete grátis." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
   ] }),
   component: Index,
 });

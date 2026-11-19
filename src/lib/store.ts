@@ -9,5 +9,11 @@ export const products: Product[] = [
 let cart: number[] = [];
 const subs = new Set<() => void>();
 export const addToCart = (id: number) => { cart = [...cart, id]; subs.forEach((f) => f()); };
+export const removeFromCart = (id: number) => {
+  const index = cart.indexOf(id);
+  if (index < 0) return;
+  cart = cart.filter((_, i) => i !== index);
+  subs.forEach((f) => f());
+};
 export const useCart = () => useSyncExternalStore((f) => (subs.add(f), () => subs.delete(f)), () => cart, () => cart);
 export const brl = (n: number) => n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });

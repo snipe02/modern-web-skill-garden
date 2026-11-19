@@ -11,6 +11,8 @@ export const Route = createFileRoute("/produtos")({
     { name: "description", content: "Caixas de som, smartphones, notebooks e smart TVs em até 10x sem juros." },
     { property: "og:title", content: "Produtos — Plataforma" },
     { property: "og:description", content: "Eletrônicos em até 10x sem juros." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
   ] }),
   component: Produtos,
 });
